@@ -1,52 +1,50 @@
-// ===== PARTICULAS =====
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 80 },
-    color: { value: "#00bfff" },
-    shape: { type: "circle" },
-    opacity: { value: 0.5, random: true },
-    size: { value: 3, random: true },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#00bfff",
-      opacity: 0.3,
-      width: 1
-    },
-    move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: true, mode: "grab" },
-      onclick: { enable: true, mode: "push" },
-      resize: true
-    },
-    modes: {
-      grab: { distance: 140, line_linked: { opacity: 0.7 } },
-      push: { particles_nb: 4 }
-    }
-  },
-  retina_detect: true
-});
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  color: #fff;
+  background: linear-gradient(180deg, #000010 0%, #001a33 100%);
+  overflow-x: hidden;
+  position: relative;
+}
 
-// ===== SCROLL ARRIBA =====
-const scrollBtn = document.getElementById("scrollTopBtn");
+#particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
 
-window.onscroll = function() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-};
+header { text-align: center; padding: 80px 20px 40px; }
+header h1 { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; color:#00bfff; text-shadow: 0 0 15px #00bfff; }
+header p { color:#b0c7e1; font-size:1.1rem; }
 
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+.about { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; padding:50px 20px;}
+.profile-img { width:220px; height:220px; border-radius:50%; border:3px solid #00bfff; box-shadow:0 0 25px #0077ff; transition:0.4s; }
+.profile-img:hover { transform: scale(1.05); box-shadow:0 0 35px #00bfff; }
 
-// ===== AOS (ANIMACIONES SCROLL) =====
-AOS.init({
-  duration: 1200,
-  once: true
-});
+.about-text { max-width:500px; text-align:left; }
+.about-text h2, .about-text h3 { color:#00bfff; text-shadow:0 0 10px #00bfff; margin-bottom:10px; }
+.about-text p { line-height:1.6; color:#cbdaf1; }
+
+.skills { display:flex; flex-direction:column; gap:12px; margin-top:15px; }
+.skill { display:flex; flex-direction:column; }
+.skill span { font-weight:bold; margin-bottom:4px; }
+.bar { width:100%; height:12px; background:#001a33; border-radius:8px; overflow:hidden; }
+.fill { height:100%; background:#00bfff; border-radius:8px; }
+
+.projects { padding:60px 20px; text-align:center; }
+.projects h2 { color:#00bfff; text-shadow:0 0 15px #00bfff; margin-bottom:40px; }
+.project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:40px; justify-items:center; }
+.project-card { background:rgba(0,20,40,0.7); border-radius:16px; padding:20px; box-shadow:0 0 15px rgba(0,120,255,0.3); transition: transform 0.4s, box-shadow 0.4s; }
+.project-card:hover { transform: translateY(-8px); box-shadow:0 0 35px #00bfff; }
+.project-card img { width:100%; border-radius:12px; margin-bottom:15px; }
+.project-card h3 { color:#00bfff; }
+.project-card p { font-size:0.95rem; color:#cbdaf1; min-height:70px; }
+.btn { display:inline-block; padding:10px 20px; background:transparent; color:#00bfff; border:2px solid #00bfff; border-radius:8px; text-decoration:none; font-weight:bold; transition: all 0.3s; }
+.btn:hover { background:#00bfff; color:#000; box-shadow:0 0 25px #00bfff; transform:scale(1.05); }
+
+.contact { padding:60px 20px; text-align:center; }
+.contact h2 { color:#00bfff; text-shadow:0 0 15px #00bfff; margin-bottom:30px; }
+.contact-icons { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.contact-btn { padding:10px 20px; border:2px solid #00bfff; border-radius:8px; color:#00bfff; text-decoration:none; font-weight:bold; transition: all 0.3s; }
+.contact-btn:hover { background:#00bfff; color:#000; box-shadow:0 0 25px #00bfff; transform:scale(1.05); }
+
+#scrollTopBtn { position:fixed; bottom:30px; right:30px; background:#00bfff; color:#000; border:none; padding:12px; border-radius:50%; font-size:1.5rem; cursor:pointer; display:none; box-shadow:0 0 20px #00bfff; transition:all 0.3s;}
+#scrollTopBtn:hover { transform:scale(1.1); }
+
+footer { text-align:center; padding:30px; font-size:0.9rem; color:#b0c7e1; background:rgba(0,0,20,0.8); }
