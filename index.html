@@ -1,278 +1,66 @@
-<!--
-  Portafolio para ERNESTO EMILIANO RIVERA LOPEZ
-  - One-page responsive (oscuro moderno)
-  - Incluye secciones: Inicio, Sobre mí, Proyectos, Contacto
-  - Proyectos enlazados a tus repositorios:
-      https://github.com/ernestriver14/MedidorNivelAgua
-      https://github.com/ernestriver14/MotorControlApp
-      https://github.com/ernestriver14/BaseDeDatosJugueteria
-  Instrucciones de uso más abajo en el chat.
--->
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ernesto Emiliano Rivera López — Portafolio</title>
-  <meta name="description" content="Portafolio de Ernesto Emiliano Rivera López — Tecnólogo en Desarrollo de Software. Proyectos en Java, C, C#, Arduino, MySQL, HTML, CSS." />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b0f13; /* casi negro */
-      --card:#0f1720; /* gris oscuro */
-      --muted:#9aa7b2;
-      --accent:#1f6feb; /* azul neón */
-      --glass: rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
-      --radius:16px;
-      --maxw:1100px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:'Poppins',system-ui,Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(31,111,235,0.06), transparent),
-                  radial-gradient(900px 500px at 90% 80%, rgba(60,70,90,0.04), transparent),
-                  var(--bg);
-      color:#e6f0f6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:40px 20px;
-      display:flex;justify-content:center;
-    }
-    .container{width:100%;max-width:var(--maxw)}
-
-    /* Header / Hero */
-    header{
-      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:36px
-    }
-    .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border-radius:var(--radius);padding:28px;
-      box-shadow:0 6px 30px rgba(3,6,10,0.6);
-      border:1px solid rgba(255,255,255,0.03);
-    }
-    .name{font-size:28px;font-weight:700;letter-spacing:0.4px}
-    .subtitle{color:var(--muted);margin-top:8px;font-size:14px}
-    .techs{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
-    .tag{background:var(--glass);padding:8px 12px;border-radius:10px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
-
-    /* profile */
-    .profile{
-      display:flex;flex-direction:column;align-items:flex-end;gap:12px
-    }
-    .avatar{
-      width:140px;height:140px;border-radius:14px;background:linear-gradient(135deg, rgba(31,111,235,0.14), rgba(0,0,0,0.15));display:flex;align-items:center;justify-content:center;font-family:'Roboto Mono';font-weight:700;font-size:18px;color:var(--muted);border:1px solid rgba(255,255,255,0.03)
-    }
-    .profile small{color:var(--muted);font-size:12px}
-
-    /* sections */
-    section{background:transparent;margin-bottom:22px}
-    h2{font-size:18px;margin-bottom:12px}
-
-    /* about */
-    .about{display:flex;gap:20px;align-items:flex-start}
-    .about .card{flex:1;padding:22px;background:linear-gradient(180deg,var(--card), rgba(10,12,16,0.4));border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .about p{color:var(--muted);font-size:15px}
-
-    /* projects grid */
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .project{
-      background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
-      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,12,0.5);transition:transform .25s ease,box-shadow .25s ease;
-    }
-    .project:hover{transform:translateY(-8px);box-shadow:0 18px 45px rgba(2,8,20,0.6)}
-    .project .p-title{font-weight:600;margin-bottom:8px}
-    .p-desc{color:var(--muted);font-size:14px;margin-bottom:14px}
-    .p-meta{display:flex;gap:8px;flex-wrap:wrap}
-    .btn-row{display:flex;gap:10px;margin-top:14px}
-    .btn{padding:9px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.05);cursor:pointer;font-weight:600;font-size:13px}
-    .btn-primary{background:linear-gradient(90deg,var(--accent), rgba(31,111,235,0.6));color:#07102a;border:none;box-shadow:0 6px 24px rgba(31,111,235,0.12)}
-
-    /* contact */
-    .contact-card{display:flex;gap:18px;align-items:center;padding:18px;border-radius:12px;background:linear-gradient(180deg,var(--glass),transparent);border:1px solid rgba(255,255,255,0.02)}
-    .contact-card input, .contact-card textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:var(--muted);width:100}
-
-    /* footer */
-    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
-
-    /* responsive */
-    @media (max-width:900px){
-      header{grid-template-columns:1fr}
-      .projects-grid{grid-template-columns:repeat(2,1fr)}
-      .profile{align-items:flex-start}
-    }
-    @media (max-width:600px){
-      .projects-grid{grid-template-columns:1fr}
-    }
-
-    /* small animated accent */
-    .neon{color:var(--accent);text-shadow:0 6px 28px rgba(31,111,235,0.12)}
-
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de Ernesto Emiliano Rivera López, estudiante de desarrollo de software.">
+  <meta name="keywords" content="Ernesto Rivera, portafolio, desarrollador, software, Arduino, Java, C#">
+  <title>Ernesto Rivera | Portafolio</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="hero-card">
-        <div class="name">ERNESTO EMILIANO RIVERA LOPEZ</div>
-        <div class="subtitle">Tecnólogo en Desarrollo de Software — 7° semestre</div>
-        <div class="techs" style="margin-top:14px">
-          <div class="tag">Java</div>
-          <div class="tag">C</div>
-          <div class="tag">C#</div>
-          <div class="tag">Arduino</div>
-          <div class="tag">MySQL</div>
-          <div class="tag">HTML</div>
-          <div class="tag">CSS</div>
-        </div>
+  <div id="particles-js"></div>
 
-        <div style="margin-top:18px">
-          <p style="color:var(--muted);font-size:15px">Soy estudiante de tecnólogo en desarrollo de software cursando séptimo semestre. Me especializo en proyectos escolares y personales usando Java, C, C#, Arduino, MySQL y desarrollo web con HTML/CSS. Me interesa la automatización, sistemas embebidos y la integración de hardware y software.</p>
-        </div>
+  <header>
+    <h1>Ernesto Emiliano Rivera López</h1>
+    <p>Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre</p>
+  </header>
 
+  <section class="about">
+    <img src="img/ernesto.jpg" alt="Foto de Ernesto" class="profile-img" />
+    <div class="about-text">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
+        desarrollados en <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>,
+        <strong>Arduino</strong>, <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>.
+        Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.
+      </p>
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>Mis Proyectos</h2>
+    <div class="project-grid">
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
+        <h3>Medidor de Nivel de Agua</h3>
+        <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
+        <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
       </div>
 
-      <aside class="profile">
-        <div class="avatar">ER</div>
-        <div style="text-align:right">
-          <small>Ubicación: México</small><br>
-          <small>Disponibilidad: Proyectos escolares / freelance</small>
-        </div>
-      </aside>
-    </header>
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/motorapp.png" alt="Motor Control App" />
+        <h3>Motor Control App</h3>
+        <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
+        <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+      </div>
 
-    <main>
-      <section class="about">
-        <div class="card">
-          <h2 class="neon">Sobre mí</h2>
-          <p style="margin-top:10px">Soy estudiante de tecnólogo en desarrollo de software cursando séptimo semestre. Tengo experiencia en proyectos en Java, C, C#, Arduino, MySQL, HTML y CSS. Me gusta diseñar soluciones prácticas que integren hardware y software.</p>
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
+        <h3>Base de Datos Juguetería</h3>
+        <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
+        <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+      </div>
+    </div>
+  </section>
 
-          <div style="margin-top:12px">
-            <h3 style="font-size:14px;margin-bottom:8px">Habilidades</h3>
-            <div class="techs">
-              <div class="tag">Algoritmos</div>
-              <div class="tag">Arduino</div>
-              <div class="tag">Back-end</div>
-              <div class="tag">Bases de datos</div>
-              <div class="tag">Desarrollo móvil</div>
-            </div>
-          </div>
-        </div>
+  <footer>
+    <p>© 2025 Ernesto Emiliano Rivera López</p>
+  </footer>
 
-        <div class="card" style="width:320px;padding:18px;display:flex;flex-direction:column;gap:12px">
-          <h2 class="neon">Resumen rápido</h2>
-          <div style="color:var(--muted);font-size:14px">
-            <p><strong>Estado:</strong> Estudiante (7° semestre)</p>
-            <p><strong>Proyectos:</strong> 3 repositorios públicos</p>
-            <p><strong>Objetivo:</strong> Portafolio profesional para mostrar trabajos y atraer oportunidades</p>
-          </div>
-
-          <div style="margin-top:6px">
-            <button class="btn btn-primary" onclick="scrollToSection('projects')">Ver proyectos</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects">
-        <h2 class="neon">Proyectos destacados</h2>
-        <div style="height:12px"></div>
-        <div class="projects-grid">
-
-          <!-- Proyecto 1 -->
-          <article class="project">
-            <div class="p-title">MedidorNivelAgua</div>
-            <div class="p-desc">Proyecto escolar: medidor de nivel de agua usando potenciómetro y Arduino. Incluye código, diagramas y tablas de pruebas.</div>
-            <div class="p-meta">
-              <div class="tag">Arduino</div>
-              <div class="tag">C/C++</div>
-              <div class="tag">Electrónica</div>
-            </div>
-            <div class="btn-row">
-              <a class="btn" href="https://github.com/ernestriver14/MedidorNivelAgua" target="_blank">Ver repositorio</a>
-              <button class="btn btn-primary" onclick="openPreview('MedidorNivelAgua')">Ver demo (README)</button>
-            </div>
-          </article>
-
-          <!-- Proyecto 2 -->
-          <article class="project">
-            <div class="p-title">MotorControlApp</div>
-            <div class="p-desc">Aplicación de control de motores (interfaz + lógica). Proyecto en C# y/o Java para control y monitoreo.</div>
-            <div class="p-meta">
-              <div class="tag">C#</div>
-              <div class="tag">Interfaz</div>
-              <div class="tag">Control</div>
-            </div>
-            <div class="btn-row">
-              <a class="btn" href="https://github.com/ernestriver14/MotorControlApp" target="_blank">Ver repositorio</a>
-              <button class="btn btn-primary" onclick="openPreview('MotorControlApp')">Ver demo (README)</button>
-            </div>
-          </article>
-
-          <!-- Proyecto 3 -->
-          <article class="project">
-            <div class="p-title">BaseDeDatosJugueteria</div>
-            <div class="p-desc">Diseño e implementación de base de datos para una juguetería: modelado, consultas SQL y scripts de inserción.</div>
-            <div class="p-meta">
-              <div class="tag">MySQL</div>
-              <div class="tag">SQL</div>
-              <div class="tag">Modelado</div>
-            </div>
-            <div class="btn-row">
-              <a class="btn" href="https://github.com/ernestriver14/BaseDeDatosJugueteria" target="_blank">Ver repositorio</a>
-              <button class="btn btn-primary" onclick="openPreview('BaseDeDatosJugueteria')">Ver demo (README)</button>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <section style="margin-top:18px">
-        <h2 class="neon">Contacto</h2>
-        <div style="height:8px"></div>
-        <div class="contact-card">
-          <div style="flex:1">
-            <p style="color:var(--muted)">Aquí podrás agregar tus redes cuando quieras. Por ahora se muestra un formulario ficticio para contacto.</p>
-            <div style="margin-top:8px;display:flex;gap:8px">
-              <input type="text" placeholder="Tu nombre" style="flex:1" />
-              <input type="email" placeholder="Tu correo" style="width:240px" />
-            </div>
-            <div style="margin-top:8px">
-              <textarea placeholder="Mensaje" rows="2" style="width:100%"></textarea>
-            </div>
-          </div>
-          <div>
-            <button class="btn btn-primary">Enviar (simulado)</button>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      © <span id="year"></span> ERNESTO EMILIANO RIVERA LOPEZ — Tecnólogo en Desarrollo de Software
-    </footer>
-  </div>
-
-  <script>
-    // small helpers
-    document.getElementById('year').innerText = new Date().getFullYear();
-    function scrollToSection(id){
-      const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior:'smooth'});
-    }
-
-    // abrir README en nueva pestaña (si existe)
-    function openPreview(name){
-      const base = 'https://github.com/ernestriver14/';
-      const url = base + name;
-      window.open(url, '_blank');
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
