@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Ernesto Emiliano Rivera López, estudiante de desarrollo de software.">
   <meta name="keywords" content="Ernesto Rivera, portafolio, desarrollador, software, Arduino, Java, C#">
   <title>Ernesto Rivera | Portafolio</title>
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
   <div id="particles-js"></div>
 
+  <!-- HEADER -->
   <header>
     <h1>Ernesto Emiliano Rivera López</h1>
     <p>Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre</p>
   </header>
 
-  <section class="about">
-    <img src="img/ernesto.png" alt="Foto de Ernest" class="profile-img" />
+  <!-- SOBRE MÍ -->
+  <section class="about" data-aos="fade-up">
+    <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img">
     <div class="about-text">
       <h2>Sobre mí</h2>
-      <p>
-        Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
+      <p>Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
         desarrollados en <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>,
         <strong>Arduino</strong>, <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>.
-        Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.
-      </p>
+        Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.</p>
+      <h3>Habilidades</h3>
+      <div class="skills">
+        <div class="skill"><span>Java</span><div class="bar"><div class="fill" style="width: 90%;"></div></div></div>
+        <div class="skill"><span>C#</span><div class="bar"><div class="fill" style="width: 85%;"></div></div></div>
+        <div class="skill"><span>Arduino</span><div class="bar"><div class="fill" style="width: 80%;"></div></div></div>
+        <div class="skill"><span>MySQL</span><div class="bar"><div class="fill" style="width: 75%;"></div></div></div>
+        <div class="skill"><span>HTML/CSS</span><div class="bar"><div class="fill" style="width: 90%;"></div></div></div>
+      </div>
     </div>
   </section>
 
+  <!-- PROYECTOS -->
   <section class="projects">
-    <h2>Mis Proyectos</h2>
+    <h2 data-aos="fade-up">Mis Proyectos</h2>
     <div class="project-grid">
       <div class="project-card" data-aos="fade-up">
-        <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
+        <img src="img/medidor.png" alt="Medidor de Nivel de Agua">
         <h3>Medidor de Nivel de Agua</h3>
         <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
         <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
       </div>
 
       <div class="project-card" data-aos="fade-up">
-        <img src="img/motorapp.png" alt="Motor Control App" />
+        <img src="img/motorapp.png" alt="Motor Control App">
         <h3>Motor Control App</h3>
         <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
         <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
       </div>
 
       <div class="project-card" data-aos="fade-up">
-        <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
+        <img src="img/jugueteria.png" alt="Base de Datos Juguetería">
         <h3>Base de Datos Juguetería</h3>
         <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
         <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
@@ -56,11 +67,30 @@
     </div>
   </section>
 
+  <!-- CONTACTO -->
+  <section class="contact" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <div class="contact-icons">
+      <a href="https://github.com/ernestriver14" target="_blank" class="contact-btn">GitHub</a>
+      <a href="mailto:tuemail@example.com" class="contact-btn">Correo</a>
+      <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="contact-btn">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- BOTÓN SUBIR ARRIBA -->
+  <button id="scrollTopBtn">↑</button>
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Ernesto Emiliano Rivera López</p>
   </footer>
 
+  <!-- LIBRERÍAS -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+  </script>
 </body>
 </html>
