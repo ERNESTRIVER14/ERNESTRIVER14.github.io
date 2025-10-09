@@ -1,4 +1,4 @@
-// PARTICULAS
+// ===== PARTICULAS =====
 particlesJS("particles-js", {
   particles: {
     number: { value: 80 },
@@ -17,5 +17,36 @@ particlesJS("particles-js", {
   },
   interactivity: {
     detect_on: "canvas",
-    events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-    modes: { grab: { distance: 140, line_linked: { opacity: 0.7 }
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 140, line_linked: { opacity: 0.7 } },
+      push: { particles_nb: 4 }
+    }
+  },
+  retina_detect: true
+});
+
+// ===== SCROLL ARRIBA =====
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// ===== AOS (ANIMACIONES SCROLL) =====
+AOS.init({
+  duration: 1200,
+  once: true
+});
