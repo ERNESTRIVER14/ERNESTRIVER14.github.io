@@ -1,4 +1,4 @@
-// ===== PARTICULAS =====
+// Configuración de partículas
 particlesJS("particles-js", {
   particles: {
     number: { value: 80 },
@@ -13,7 +13,12 @@ particlesJS("particles-js", {
       opacity: 0.3,
       width: 1
     },
-    move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      out_mode: "out"
+    }
   },
   interactivity: {
     detect_on: "canvas",
@@ -28,23 +33,4 @@ particlesJS("particles-js", {
     }
   },
   retina_detect: true
-});
-
-// ===== SCROLL ARRIBA =====
-const scrollBtn = document.getElementById("scrollTopBtn");
-window.onscroll = function() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-};
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// ===== AOS =====
-AOS.init({
-  duration: 1200,
-  once: true
 });
