@@ -1,10 +1,10 @@
+/* === FONDO Y ESTILOS GENERALES === */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   color: #fff;
-  background: radial-gradient(circle at top, #001a33, #000010);
+  background: linear-gradient(180deg, #000010 0%, #001a33 100%);
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 #particles-js {
@@ -14,98 +14,66 @@ body {
   z-index: -1;
 }
 
-/* HEADER */
+/* === HEADER === */
 header {
   text-align: center;
   padding: 80px 20px 40px;
+  animation: fadeIn 1.5s ease;
 }
 
 header h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: #00bfff;
-  text-shadow: 0 0 20px #00bfff;
+  text-shadow: 0 0 15px #00bfff;
 }
 
 header p {
   color: #b0c7e1;
+  font-size: 1.1rem;
 }
 
-/* ABOUT */
+/* === SECCIÓN SOBRE MÍ === */
 .about {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 60px 20px;
+  padding: 50px 20px;
   flex-wrap: wrap;
 }
 
 .profile-img {
-  width: 230px;
-  height: 230px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   border: 3px solid #00bfff;
   box-shadow: 0 0 25px #0077ff;
-  transition: transform 0.5s;
-}
-
-.profile-img:hover {
-  transform: scale(1.05);
 }
 
 .about-text {
-  max-width: 520px;
+  max-width: 500px;
+  text-align: left;
 }
 
 .about-text h2 {
   color: #00bfff;
+  text-shadow: 0 0 10px #00bfff;
 }
 
-.social-links a {
-  color: #00bfff;
-  font-size: 1.5rem;
-  margin-right: 15px;
-  transition: all 0.3s;
+.about-text p {
+  line-height: 1.6;
 }
 
-.social-links a:hover {
-  color: #fff;
-  text-shadow: 0 0 15px #00bfff;
-}
-
-/* SKILLS */
-.skills {
-  text-align: center;
-  padding: 50px 20px;
-  background: rgba(0, 20, 40, 0.5);
-  backdrop-filter: blur(8px);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 20px;
-  margin-top: 25px;
-}
-
-.skill {
-  background: rgba(0, 30, 60, 0.8);
-  border-radius: 10px;
-  padding: 15px;
-  color: #00bfff;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.skill:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px #00bfff;
-}
-
-/* === PROYECTOS SIN ZOOM === */
+/* === PROYECTOS (VERSIÓN ORIGINAL RESTAURADA) === */
 .projects {
   padding: 60px 20px;
   text-align: center;
+}
+
+.projects h2 {
+  color: #00bfff;
+  text-shadow: 0 0 15px #00bfff;
+  margin-bottom: 40px;
 }
 
 .project-grid {
@@ -120,57 +88,42 @@ header p {
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0, 120, 255, 0.3);
-  width: 100%;
+  transition: transform 0.4s, box-shadow 0.4s;
   max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: 0 0 25px #00bfff;
 }
 
 .project-card img {
   width: 100%;
-  height: auto; /* ✅ Mantiene proporción original */
+  height: auto; /* 👈 Mantiene el tamaño original exacto */
   border-radius: 12px;
   margin-bottom: 15px;
+  display: block;
+  object-fit: contain; /* evita recortes o zoom */
 }
 
 .project-card h3 {
   color: #00bfff;
-  margin-bottom: 10px;
 }
 
 .project-card p {
-  color: #cbdaf1;
   font-size: 0.95rem;
+  color: #cbdaf1;
   min-height: 70px;
-  margin-bottom: 15px;
 }
 
-/* CONTACT */
-.contact {
-  text-align: center;
-  padding: 70px 20px;
-  background: rgba(0, 10, 20, 0.8);
-}
-
-.contact p {
-  color: #b0c7e1;
-  margin-bottom: 25px;
-}
-
-/* BUTTONS */
+/* === BOTONES === */
 .btn {
   display: inline-block;
-  padding: 10px 22px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #00bfff;
   border: 2px solid #00bfff;
   border-radius: 8px;
-  color: #00bfff;
   text-decoration: none;
   transition: all 0.3s;
   font-weight: bold;
@@ -183,15 +136,17 @@ header p {
   transform: scale(1.05);
 }
 
-/* FOOTER */
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 30px;
-  background: rgba(0, 0, 20, 0.9);
+  font-size: 0.9rem;
   color: #b0c7e1;
+  background: rgba(0, 0, 20, 0.8);
 }
 
-footer a {
-  color: #00bfff;
-  text-decoration: none;
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
