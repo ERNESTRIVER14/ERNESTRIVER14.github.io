@@ -6,22 +6,50 @@
   <meta name="description" content="Portafolio de Ernesto Emiliano Rivera López, estudiante de desarrollo de software.">
   <meta name="keywords" content="Ernesto Rivera, portafolio, desarrollador, software, Arduino, Java, C#, HTML, CSS, MySQL">
   <title>Ernesto Rivera | Portafolio</title>
+
+  <!-- favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png" />
+
+  <!-- DevIcons (CDN) - ya que pediste DevIcons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+
+  <!-- estilos -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- LOADER (usa tu favicon; se oculta al cargar) -->
+  <div id="loader">
+    <img src="img/favicon.png" alt="loader logo" />
+  </div>
+
+  <!-- Partículas (fondo) -->
   <div id="particles-js"></div>
 
-  <!-- CABECERA FIXA (no tapa contenido gracias al offset dinámico en CSS/JS) -->
+  <!-- NAVBAR (fixed) -->
   <nav class="navbar" role="navigation" aria-label="Principal">
-    <div class="nav-logo">ER</div>
+    <div class="nav-left">
+      <div class="nav-logo">ER</div>
+    </div>
+
     <ul class="nav-links">
       <li><a href="#about">Sobre mí</a></li>
       <li><a href="#projects">Proyectos</a></li>
       <li><a href="#skills">Tecnologías</a></li>
     </ul>
+
+    <div class="nav-right">
+      <!-- DARK/LIGHT TOGGLE -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <span id="theme-icon">🌙</span>
+      </button>
+
+      <!-- DESCARGAR CV: asegúrate de subir cv.pdf a la raíz del repo -->
+      <a id="download-cv" class="btn cv-btn" href="cv.pdf" download>Descargar CV</a>
+    </div>
   </nav>
 
+  <!-- HEADER -->
   <header>
     <h1>Ernesto Emiliano Rivera López</h1>
     <p>Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre</p>
@@ -31,67 +59,119 @@
     <!-- SOBRE MÍ -->
     <section id="about" class="about">
       <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
+
       <div class="about-text">
-        <h2>Sobre mí</h2>
-        <p>
-          Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
-          desarrollados en <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>,
-          <strong>Arduino</strong>, <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>.
-          Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.
+        <h2 class="reveal">Sobre mí</h2>
+        <p class="reveal">
+          Soy estudiante de <strong>Tecnólogo en Desarrollo de Software</strong> con experiencia práctica en
+          <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>, <strong>Arduino</strong>, <strong>MySQL</strong>,
+          <strong>HTML</strong> y <strong>CSS</strong>. Me apasiona construir soluciones tecnológicas que combinen
+          diseño, lógica y usabilidad.
         </p>
+
+        <!-- ICONO DE CONTACTO: reemplaza tuemail@ejemplo.com por tu correo real -->
+        <a class="contact-icon" href="mailto:tuemail@ejemplo.com" id="contact-link" title="Enviar correo">
+          <!-- icono simple de sobre SVG (no requiere librería externa) -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 6.5C3 5.67157 3.67157 5 4.5 5H19.5C20.3284 5 21 5.67157 21 6.5V17.5C21 18.3284 20.3284 19 19.5 19H4.5C3.67157 19 3 18.3284 3 17.5V6.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 6.5L12 12.5L3 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only">Contáctame</span>
+        </a>
       </div>
     </section>
 
-    <!-- PROYECTOS (estructura original, sólo agregué el cuadro pequeño de lenguajes) -->
+    <!-- PROYECTOS -->
     <section id="projects" class="projects">
       <h2>Mis Proyectos</h2>
+
       <div class="project-grid">
-        <div class="project-card" data-aos="fade-up">
+        <div class="project-card" data-repo="https://github.com/ernestriver14/MedidorNivelAgua">
           <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
           <h3>Medidor de Nivel de Agua</h3>
           <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
           <div class="tech-used">Arduino · C++</div>
-          <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+          <div class="project-actions">
+            <a class="btn" href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank">Ver README</a>
+            <a class="btn" href="https://github.com/ernestriver14/MedidorNivelAgua" target="_blank">Ver código</a>
+          </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up">
+        <div class="project-card" data-repo="https://github.com/ernestriver14/MotorControlApp">
           <img src="img/motorapp.png" alt="Motor Control App" />
           <h3>Motor Control App</h3>
           <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
           <div class="tech-used">C# · Arduino</div>
-          <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+          <div class="project-actions">
+            <a class="btn" href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank">Ver README</a>
+            <a class="btn" href="https://github.com/ernestriver14/MotorControlApp" target="_blank">Ver código</a>
+          </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up">
+        <div class="project-card" data-repo="https://github.com/ernestriver14/BaseDeDatosJugueteria">
           <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
           <h3>Base de Datos Juguetería</h3>
           <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
           <div class="tech-used">Java · MySQL</div>
-          <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+          <div class="project-actions">
+            <a class="btn" href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank">Ver README</a>
+            <a class="btn" href="https://github.com/ernestriver14/BaseDeDatosJugueteria" target="_blank">Ver código</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TECNOLOGÍAS (sólo los que pediste) -->
+    <!-- TECNOLOGÍAS (solo DevIcons para: Java, C, C#, Arduino, MySQL, HTML, CSS) -->
     <section id="skills" class="skills">
       <h2>Tecnologías y Herramientas</h2>
-      <div class="skills-grid">
-        <span>Java</span>
-        <span>C</span>
-        <span>C#</span>
-        <span>Arduino</span>
-        <span>MySQL</span>
-        <span>HTML</span>
-        <span>CSS</span>
+
+      <div class="skills-grid" aria-hidden="false">
+        <!-- cada .tech-item muestra el icono (devicon) en un contenedor circular -->
+        <div class="tech-item" title="Java">
+          <i class="devicon-java-plain"></i>
+        </div>
+
+        <div class="tech-item" title="C">
+          <i class="devicon-c-plain"></i>
+        </div>
+
+        <div class="tech-item" title="C#">
+          <i class="devicon-csharp-plain"></i>
+        </div>
+
+        <div class="tech-item" title="Arduino">
+          <i class="devicon-arduino-plain"></i>
+        </div>
+
+        <div class="tech-item" title="MySQL">
+          <i class="devicon-mysql-plain"></i>
+        </div>
+
+        <div class="tech-item" title="HTML5">
+          <i class="devicon-html5-plain"></i>
+        </div>
+
+        <div class="tech-item" title="CSS3">
+          <i class="devicon-css3-plain"></i>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER (GitHub + correo) -->
   <footer>
-    <p>© 2025 Ernesto Emiliano Rivera López</p>
+    <div class="footer-links">
+      <a href="https://github.com/ernestriver14" target="_blank" class="footer-link" aria-label="GitHub">GitHub</a>
+      <a href="mailto:tuemail@ejemplo.com" class="footer-link" aria-label="Email">Correo</a>
+    </div>
+    <p class="made-by">Diseñado y desarrollado por Ernesto Rivera 💻</p>
+    <p class="copyright">© 2025 Ernesto Emiliano Rivera López</p>
   </footer>
 
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- script principal -->
   <script src="script.js"></script>
 </body>
 </html>
