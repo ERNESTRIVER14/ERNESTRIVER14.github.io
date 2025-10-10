@@ -103,7 +103,7 @@ header p {
   box-shadow: 0 0 20px #00bfff;
 }
 
-/* PROJECTS */
+/* === PROYECTOS (CORREGIDO) === */
 .projects {
   padding: 60px 20px;
   text-align: center;
@@ -113,21 +113,57 @@ header p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
+  justify-items: center;
+  align-items: start;
 }
 
-.project-card img {
+.project-card {
+  background: rgba(0, 20, 40, 0.7);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.3);
+  transition: transform 0.4s, box-shadow 0.4s;
   width: 100%;
-  max-width: 100%;
-  height: 180px;              /* Tamaño fijo proporcional */
-  object-fit: cover;          /* Mantiene el recorte sin deformar */
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #00bfff;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
   border-radius: 12px;
   margin-bottom: 15px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.project-card:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00bfff;
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.08);
+}
+
+.project-card h3 {
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #cbdaf1;
+  font-size: 0.95rem;
+  min-height: 70px;
+  margin-bottom: 15px;
 }
 
 /* CONTACT */
@@ -174,6 +210,14 @@ footer a {
   text-decoration: none;
 }
 
+/* Adaptación móvil */
+@media (max-width: 768px) {
+  .project-image {
+    height: 160px;
+  }
+}
+
+/* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
