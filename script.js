@@ -1,4 +1,17 @@
-// Configuración de partículas
+// Ajuste dinámico de la variable --nav-height para que anclas no queden ocultas
+(function () {
+  function updateNavHeight() {
+    var nav = document.querySelector('.navbar');
+    if (!nav) return;
+    var h = nav.offsetHeight;
+    document.documentElement.style.setProperty('--nav-height', h + 'px');
+  }
+  // actualizar al cargar y al redimensionar
+  window.addEventListener('load', updateNavHeight);
+  window.addEventListener('resize', updateNavHeight);
+})();
+
+/* === Partículas (tu configuración original) === */
 particlesJS("particles-js", {
   particles: {
     number: { value: 80 },
