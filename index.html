@@ -3,64 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portafolio de Ernesto Emiliano Rivera López, estudiante de desarrollo de software.">
-  <meta name="keywords" content="Ernesto Rivera, portafolio, desarrollador, software, Arduino, Java, C#">
+  <meta name="description" content="Portafolio profesional de Ernesto Emiliano Rivera López, desarrollador de software especializado en Arduino, C#, Java y más.">
+  <meta name="keywords" content="Ernesto Rivera, Portafolio, Desarrollador, Software, Arduino, C#, Java, MySQL, HTML, CSS">
+  <meta property="og:title" content="Portafolio de Ernesto Rivera" />
+  <meta property="og:description" content="Conoce los proyectos de Ernesto Rivera — estudiante y desarrollador de software." />
+  <meta property="og:image" content="img/ernesto.png" />
+  <meta property="og:type" content="website" />
   <title>Ernesto Rivera | Portafolio</title>
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2c8f1ef6f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div id="particles-js"></div>
 
   <header>
-    <h1>Ernesto Emiliano Rivera López</h1>
-    <p>Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre</p>
+    <h1 data-aos="fade-down">Ernesto Emiliano Rivera López</h1>
+    <p data-aos="fade-up">Tecnólogo en Desarrollo de Software — 7° semestre</p>
   </header>
 
-  <section class="about">
-    <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
-    <div class="about-text">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
-        desarrollados en <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>,
-        <strong>Arduino</strong>, <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>.
-        Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.
-      </p>
-    </div>
-  </section>
-
-  <section class="projects">
-    <h2>Mis Proyectos</h2>
-    <div class="project-grid">
-      <div class="project-card" data-aos="fade-up">
-        <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
-        <h3>Medidor de Nivel de Agua</h3>
-        <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
-        <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+  <main>
+    <section class="about" data-aos="fade-up">
+      <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
+      <div class="about-text">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy estudiante de <strong>Tecnólogo en Desarrollo de Software</strong> con experiencia en 
+          <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>, <strong>Arduino</strong>,
+          <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>. Me apasiona desarrollar
+          proyectos que integren tecnología e innovación.
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/ernestriver14" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:ernestrivera@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
       </div>
+    </section>
 
-      <div class="project-card" data-aos="fade-up">
-        <img src="img/motorapp.png" alt="Motor Control App" />
-        <h3>Motor Control App</h3>
-        <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
-        <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+    <section class="skills" data-aos="fade-up">
+      <h2>Habilidades</h2>
+      <div class="skills-grid">
+        <div class="skill"><i class="fab fa-java"></i> Java</div>
+        <div class="skill"><i class="fas fa-microchip"></i> Arduino</div>
+        <div class="skill"><i class="fas fa-database"></i> MySQL</div>
+        <div class="skill"><i class="fab fa-html5"></i> HTML</div>
+        <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill"><i class="fab fa-windows"></i> C#</div>
       </div>
+    </section>
 
-      <div class="project-card" data-aos="fade-up">
-        <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
-        <h3>Base de Datos Juguetería</h3>
-        <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
-        <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+    <section class="projects" data-aos="fade-up">
+      <h2>Mis Proyectos</h2>
+      <div class="project-grid">
+        <article class="project-card" data-aos="fade-up">
+          <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
+          <h3>Medidor de Nivel de Agua</h3>
+          <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
+          <a href="https://github.com/ernestriver14/MedidorNivelAgua" target="_blank" class="btn">Ver Proyecto</a>
+        </article>
+
+        <article class="project-card" data-aos="fade-up">
+          <img src="img/motorapp.png" alt="Motor Control App" />
+          <h3>Motor Control App</h3>
+          <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
+          <a href="https://github.com/ernestriver14/MotorControlApp" target="_blank" class="btn">Ver Proyecto</a>
+        </article>
+
+        <article class="project-card" data-aos="fade-up">
+          <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
+          <h3>Base de Datos Juguetería</h3>
+          <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
+          <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria" target="_blank" class="btn">Ver Proyecto</a>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="contact" data-aos="fade-up">
+      <h2>Contacto</h2>
+      <p>¿Te interesa colaborar conmigo o conocer más de mis proyectos?</p>
+      <a href="mailto:ernestrivera@example.com" class="btn">Enviar mensaje</a>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Ernesto Emiliano Rivera López</p>
+    <p>© 2025 Ernesto Emiliano Rivera López | <a href="https://github.com/ernestriver14" target="_blank">GitHub</a></p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
