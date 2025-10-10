@@ -1,10 +1,9 @@
-// Configuración de partículas
 particlesJS("particles-js", {
   particles: {
     number: { value: 80 },
     color: { value: "#00bfff" },
     shape: { type: "circle" },
-    opacity: { value: 0.5, random: true },
+    opacity: { value: 0.4, random: true },
     size: { value: 3, random: true },
     line_linked: {
       enable: true,
