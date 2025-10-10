@@ -1,4 +1,13 @@
-/* === FONDO GENERAL === */
+:root {
+  /* valor inicial; el script actualizará dinámicamente --nav-height al cargar/resize */
+  --nav-height: 72px;
+}
+
+/* === GLOBAL === */
+html {
+  scroll-behavior: smooth; /* navegación más elegante */
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -11,52 +20,58 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1; /* siempre detrás */
 }
 
-/* === NAVBAR === */
+/* === NAVBAR (FIJA) === */
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: rgba(0, 10, 25, 0.9);
-  padding: 15px 40px;
+  justify-content: space-between;
+  padding: 0 28px;
+  background: rgba(0, 10, 25, 0.92);
   z-index: 1000;
-  box-shadow: 0 0 15px rgba(0, 120, 255, 0.3);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.18);
+  backdrop-filter: blur(6px);
 }
 
-.logo {
-  font-size: 1.5rem;
+.nav-logo {
   color: #00bfff;
-  font-weight: bold;
-  text-shadow: 0 0 8px #00bfff;
+  font-weight: 700;
+  letter-spacing: 0.6px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-  text-decoration: none;
   color: #b0c7e1;
-  font-weight: 500;
-  transition: color 0.3s;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 6px;
 }
 
 .nav-links a:hover {
   color: #00bfff;
+  background: rgba(0,191,255,0.03);
 }
 
 /* === HEADER === */
+/* Dejo espacio arriba para que el header no quede bajo la navbar fija */
 header {
   text-align: center;
-  padding: 150px 20px 60px; /* aumentado para no chocar con navbar */
+  padding: calc(var(--nav-height) + 40px) 20px 40px;
   animation: fadeIn 1.5s ease;
 }
 
@@ -68,7 +83,19 @@ header h1 {
 
 header p {
   color: #b0c7e1;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+}
+
+/* === SECCIONES: garantizamos que al saltar con ancla el contenido no quede oculto === */
+section {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 30px;
+}
+
+/* aplica un margen superior extra cuando se navega mediante ancla */
+#about, #projects, #skills {
+  scroll-margin-top: calc(var(--nav-height) + 18px);
 }
 
 /* === SOBRE MÍ === */
@@ -77,21 +104,21 @@ header p {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 80px 20px;
+  padding: 40px 20px;
   flex-wrap: wrap;
-  scroll-margin-top: 100px; /* visibilidad correcta */
 }
 
 .profile-img {
   width: 180px;
   height: 180px;
+  object-fit: cover; /* evita deformación */
   border-radius: 50%;
   border: 3px solid #00bfff;
   box-shadow: 0 0 25px #0077ff;
 }
 
 .about-text {
-  max-width: 500px;
+  max-width: 520px;
   text-align: left;
 }
 
@@ -100,99 +127,143 @@ header p {
   text-shadow: 0 0 10px #00bfff;
 }
 
+.about-text p {
+  line-height: 1.6;
+  color: #d8e8fb;
+}
+
 /* === PROYECTOS === */
 .projects {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
-  scroll-margin-top: 100px;
 }
 
 .projects h2 {
   color: #00bfff;
   text-shadow: 0 0 15px #00bfff;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  gap: 32px;
   justify-items: center;
+  align-items: start;
+  padding: 0 12px;
 }
 
 .project-card {
   background: rgba(0, 20, 40, 0.7);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 120, 255, 0.3);
-  transition: transform 0.4s, box-shadow 0.4s;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.28);
+  transition: transform 0.35s, box-shadow 0.35s;
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 25px #00bfff;
+  box-shadow: 0 0 26px #00bfff;
 }
 
 .project-card img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.project-card h3 {
+  color: #00bfff;
+  margin: 8px 0;
+}
+
+.project-card p {
+  color: #cbdaf1;
+  min-height: 68px;
+  margin-bottom: 8px;
 }
 
 .tech-used {
+  display: inline-block;
+  background: rgba(0, 30, 60, 0.6);
   color: #00bfff;
-  font-weight: bold;
-  margin: 10px 0;
-  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-/* === TECNOLOGÍAS === */
-.tech {
+/* === TECNOLOGÍAS/TOOLS === */
+.skills {
+  padding: 60px 20px;
   text-align: center;
-  padding: 80px 20px;
-  scroll-margin-top: 100px;
 }
 
-.tech h2 {
+.skills h2 {
   color: #00bfff;
-  text-shadow: 0 0 15px #00bfff;
-  margin-bottom: 40px;
+  text-shadow: 0 0 12px #00bfff;
+  margin-bottom: 28px;
 }
 
-.tech-grid {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 25px;
-  max-width: 700px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 16px;
+  max-width: 680px;
   margin: 0 auto;
+  padding: 0 12px;
 }
 
-.tech-item {
-  background: rgba(0, 20, 40, 0.8);
-  border: 2px solid #00bfff;
-  border-radius: 12px;
-  padding: 12px;
-  font-weight: bold;
+.skills-grid span {
+  background: rgba(0, 20, 40, 0.85);
+  border: 1px solid #00bfff;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 700;
   color: #00bfff;
-  box-shadow: 0 0 15px rgba(0, 120, 255, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 12px rgba(0,120,255,0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.tech-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #00bfff;
+.skills-grid span:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px #00bfff;
 }
 
-/* === FOOTER === */
+/* === BOTONES y FOOTER === */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: transparent;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.25s;
+}
+
+.btn:hover {
+  background: #00bfff;
+  color: #000;
+  transform: scale(1.03);
+  box-shadow: 0 0 18px #00bfff;
+}
+
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 30px 20px;
   font-size: 0.9rem;
   color: #b0c7e1;
-  background: rgba(0, 0, 20, 0.8);
+  background: rgba(0,0,10,0.35);
 }
 
-/* === ANIMACIONES === */
+/* ANIM */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
