@@ -3,37 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio de Ernesto Rivera</title>
+  <meta name="description" content="Portafolio de Ernesto Emiliano Rivera López, estudiante de desarrollo de software.">
+  <meta name="keywords" content="Ernesto Rivera, portafolio, desarrollador, software, Arduino, Java, C#">
+  <title>Ernesto Rivera | Portafolio</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div id="particles-js"></div>
+
   <header>
     <h1>Ernesto Emiliano Rivera López</h1>
-    <p>Estudiante de Tecnólogo en Desarrollo de Software</p>
+    <p>Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre</p>
   </header>
+
+  <section class="about">
+    <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
+    <div class="about-text">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
+        desarrollados en <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>,
+        <strong>Arduino</strong>, <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>.
+        Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.
+      </p>
+    </div>
+  </section>
 
   <section class="projects">
     <h2>Mis Proyectos</h2>
     <div class="project-grid">
-      <div class="project-card">
-        <img src="img/medidor.png" alt="Medidor de Nivel de Agua">
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
         <h3>Medidor de Nivel de Agua</h3>
         <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
+        <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
       </div>
 
-      <div class="project-card">
-        <img src="img/motorapp.png" alt="Motor Control App">
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/motorapp.png" alt="Motor Control App" />
         <h3>Motor Control App</h3>
         <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
+        <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
       </div>
 
-      <div class="project-card">
-        <img src="img/jugueteria.png" alt="Base de Datos Juguetería">
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
         <h3>Base de Datos Juguetería</h3>
         <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
+        <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
       </div>
     </div>
   </section>
+
+  <footer>
+    <p>© 2025 Ernesto Emiliano Rivera López</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+Script.js:
+// Configuración de partículas
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#00bfff" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5, random: true },
+    size: { value: 3, random: true },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#00bfff",
+      opacity: 0.3,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 140, line_linked: { opacity: 0.7 } },
+      push: { particles_nb: 4 }
+    }
+  },
+  retina_detect: true
+});
