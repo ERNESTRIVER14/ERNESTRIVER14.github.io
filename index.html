@@ -4,171 +4,132 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portafolio de Ernesto Emiliano Rivera López, estudiante de desarrollo de software.">
-  <meta name="keywords" content="Ernesto Rivera, portafolio, desarrollador, software, Arduino, Java, C#, HTML, CSS, MySQL">
+  <meta name="keywords" content="Ernesto Rivera, portafolio, desarrollador, software, Arduino, Java, C#">
   <title>Ernesto Rivera | Portafolio</title>
-
-  <!-- favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png" />
-
-  <!-- DevIcons (CDN) - ya que pediste DevIcons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
-
-  <!-- estilos -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <!-- LOADER (usa tu favicon; se oculta al cargar) -->
+  <!-- LOADER -->
   <div id="loader">
-    <img src="img/favicon.png" alt="loader logo" />
+    <img src="img/favicon.png" alt="Loader" class="loader-img">
   </div>
 
-  <!-- Partículas (fondo) -->
   <div id="particles-js"></div>
 
-  <!-- NAVBAR (fixed) -->
-  <nav class="navbar" role="navigation" aria-label="Principal">
-    <div class="nav-left">
-      <div class="nav-logo">ER</div>
-    </div>
-
-    <ul class="nav-links">
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#skills">Tecnologías</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <!-- DARK/LIGHT TOGGLE -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
-        <span id="theme-icon">🌙</span>
-      </button>
-
-      <!-- DESCARGAR CV: asegúrate de subir cv.pdf a la raíz del repo -->
-      <a id="download-cv" class="btn cv-btn" href="cv.pdf" download>Descargar CV</a>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
+  <!-- CABECERA -->
   <header>
-    <h1>Ernesto Emiliano Rivera López</h1>
-    <p>Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre</p>
+    <h1 data-es="Ernesto Emiliano Rivera López" data-en="Ernesto Emiliano Rivera López">Ernesto Emiliano Rivera López</h1>
+    <p data-es="Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre"
+       data-en="Software Development Technologist Student — 7th Semester">
+      Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre
+    </p>
+    <div class="header-buttons">
+      <a href="docs/CV.pdf" class="btn" download data-es="Descargar CV" data-en="Download CV">Descargar CV</a>
+      <button id="translateBtn" class="btn">EN/ES</button>
+    </div>
   </header>
 
-  <main>
-    <!-- SOBRE MÍ -->
-    <section id="about" class="about">
-      <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
-
-      <div class="about-text">
-        <h2 class="reveal">Sobre mí</h2>
-        <p class="reveal">
-         Soy un estudiante de Tecnólogo en Desarrollo de Software en CETI con experiencia en la práctica de los lenguajes: Java, C, C#, Arduino, MySQL, HTML y CSS. He estado creando varios proyectos en los que he podido utilizar estos aprendizajes, principalmente en los que integran software, electrónica y robótica. Deseo seguir avanzando en el campo tecnológico y continuar mis estudios en Mecatrónica, donde tenga la oportunidad de combinar mejor el desarrollo de software con los sistemas físicos.
-        </p>
-
-        <!-- ICONO DE CONTACTO: reemplaza tuemail@ejemplo.com por tu correo real -->
-        <a href="mailto:a22300214@ceti.mx" class="contact-icon" title="Enviar correo">
-          <!-- icono simple de sobre SVG (no requiere librería externa) -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 6.5C3 5.67157 3.67157 5 4.5 5H19.5C20.3284 5 21 5.67157 21 6.5V17.5C21 18.3284 20.3284 19 19.5 19H4.5C3.67157 19 3 18.3284 3 17.5V6.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 6.5L12 12.5L3 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="sr-only">Contáctame</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- PROYECTOS -->
-    <section id="projects" class="projects">
-      <h2>Mis Proyectos</h2>
-
-      <div class="project-grid">
-        <div class="project-card" data-repo="https://github.com/ernestriver14/MedidorNivelAgua">
-          <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
-          <h3>Medidor de Nivel de Agua</h3>
-          <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
-          <div class="tech-used">Arduino · C++</div>
-          <div class="project-actions">
-            <a class="btn" href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank">Ver README</a>
-            <a class="btn" href="https://github.com/ernestriver14/MedidorNivelAgua" target="_blank">Ver código</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-repo="https://github.com/ernestriver14/MotorControlApp">
-          <img src="img/motorapp.png" alt="Motor Control App" />
-          <h3>Motor Control App</h3>
-          <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
-          <div class="tech-used">C# · Arduino</div>
-          <div class="project-actions">
-            <a class="btn" href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank">Ver README</a>
-            <a class="btn" href="https://github.com/ernestriver14/MotorControlApp" target="_blank">Ver código</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-repo="https://github.com/ernestriver14/BaseDeDatosJugueteria">
-          <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
-          <h3>Base de Datos Juguetería</h3>
-          <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
-          <div class="tech-used">Java · MySQL</div>
-          <div class="project-actions">
-            <a class="btn" href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank">Ver README</a>
-            <a class="btn" href="https://github.com/ernestriver14/BaseDeDatosJugueteria" target="_blank">Ver código</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TECNOLOGÍAS (solo DevIcons para: Java, C, C#, Arduino, MySQL, HTML, CSS) -->
-    <section id="skills" class="skills">
-      <h2>Tecnologías y Herramientas</h2>
-
-      <div class="skills-grid" aria-hidden="false">
-        <!-- cada .tech-item muestra el icono (devicon) en un contenedor circular -->
-        <div class="tech-item" title="Java">
-          <i class="devicon-java-plain"></i>
-        </div>
-
-        <div class="tech-item" title="C">
-          <i class="devicon-c-plain"></i>
-        </div>
-
-        <div class="tech-item" title="C#">
-          <i class="devicon-csharp-plain"></i>
-        </div>
-
-        <div class="tech-item" title="Arduino">
-          <i class="devicon-arduino-plain"></i>
-        </div>
-
-        <div class="tech-item" title="MySQL">
-          <i class="devicon-mysql-plain"></i>
-        </div>
-
-        <div class="tech-item" title="HTML5">
-          <i class="devicon-html5-plain"></i>
-        </div>
-
-        <div class="tech-item" title="CSS3">
-          <i class="devicon-css3-plain"></i>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER (GitHub + correo) -->
-  <footer>
-    <div class="footer-links">
-      <a href="https://github.com/ernestriver14" target="_blank" class="footer-link" aria-label="GitHub">GitHub</a>
-      <a href="mailto:a22300214@ceti.mx" class="footer-link" aria-label="Email">Correo</a>
+  <!-- SOBRE MÍ -->
+  <section class="about" data-aos="fade-up">
+    <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
+    <div class="about-text-box">
+      <h2 data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+      <p data-es="Soy un estudiante de Tecnólogo en Desarrollo de Software en CETI con experiencia en la práctica de los lenguajes: Java, C, C#, Arduino, MySQL, HTML y CSS. He estado creando varios proyectos en los que he podido utilizar estos aprendizajes, principalmente en los que integran software, electrónica y robótica. Deseo seguir avanzando en el campo tecnológico y continuar mis estudios en Mecatrónica, donde tenga la oportunidad de combinar mejor el desarrollo de software con los sistemas físicos."
+         data-en="I am a Software Development Technologist student at CETI with experience in practical use of Java, C, C#, Arduino, MySQL, HTML, and CSS. I have been creating various projects where I applied these skills, mainly in software, electronics, and robotics projects. I aim to advance in the technological field and continue my studies in Mechatronics, where I can better combine software development with physical systems.">
+        Soy un estudiante de Tecnólogo en Desarrollo de Software en CETI con experiencia en la práctica de los lenguajes: Java, C, C#, Arduino, MySQL, HTML y CSS. He estado creando varios proyectos en los que he podido utilizar estos aprendizajes, principalmente en los que integran software, electrónica y robótica. Deseo seguir avanzando en el campo tecnológico y continuar mis estudios en Mecatrónica, donde tenga la oportunidad de combinar mejor el desarrollo de software con los sistemas físicos.
+      </p>
+      <a href="mailto:a22300214@ceti.mx" class="contact-icon" title="Enviar correo">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
     </div>
-    <p class="made-by">Diseñado y desarrollado por Ernesto Rivera 💻</p>
-    <p class="copyright">© 2025 Ernesto Emiliano Rivera López</p>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="projects" data-aos="fade-up">
+    <h2 data-es="Mis Proyectos" data-en="My Projects">Mis Proyectos</h2>
+    <div class="project-grid">
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
+        <h3>Medidor de Nivel de Agua</h3>
+        <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
+        <div class="project-buttons">
+          <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+          <a href="https://github.com/ernestriver14/MedidorNivelAgua" target="_blank" class="btn">Ver código</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/motorapp.png" alt="Motor Control App" />
+        <h3>Motor Control App</h3>
+        <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
+        <div class="project-buttons">
+          <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+          <a href="https://github.com/ernestriver14/MotorControlApp" target="_blank" class="btn">Ver código</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up">
+        <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
+        <h3>Base de Datos Juguetería</h3>
+        <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
+        <div class="project-buttons">
+          <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+          <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria" target="_blank" class="btn">Ver código</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS -->
+  <section class="technologies" data-aos="fade-up">
+    <h2 data-es="Tecnologías y Herramientas" data-en="Technologies & Tools">Tecnologías y Herramientas</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <i class="devicons devicons-java"></i>
+        <p>Java</p>
+      </div>
+      <div class="tech-item">
+        <i class="devicons devicons-c"></i>
+        <p>C</p>
+      </div>
+      <div class="tech-item">
+        <i class="devicons devicons-csharp"></i>
+        <p>C#</p>
+      </div>
+      <div class="tech-item">
+        <i class="devicons devicons-arduino"></i>
+        <p>Arduino</p>
+      </div>
+      <div class="tech-item">
+        <i class="devicons devicons-mysql"></i>
+        <p>MySQL</p>
+      </div>
+      <div class="tech-item">
+        <i class="devicons devicons-html5"></i>
+        <p>HTML</p>
+      </div>
+      <div class="tech-item">
+        <i class="devicons devicons-css3"></i>
+        <p>CSS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year"></span> Ernesto Emiliano Rivera López — Diseñado y desarrollado por Ernesto Rivera 💻</p>
+    <div class="footer-icons">
+      <a href="https://github.com/ernestriver14" target="_blank" title="GitHub"><i class="devicons devicons-github"></i></a>
+      <a href="mailto:a22300214@ceti.mx" title="Enviar correo"><i class="fa-solid fa-envelope"></i></a>
+    </div>
   </footer>
 
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-  <!-- script principal -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
