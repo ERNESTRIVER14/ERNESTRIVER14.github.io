@@ -1,35 +1,79 @@
+/* === FONDO Y ESTILOS GENERALES === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #001122;
   color: #fff;
+  background: linear-gradient(180deg, #000010 0%, #001a33 100%);
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 /* === HEADER === */
 header {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 80px 20px 40px;
+  animation: fadeIn 1.5s ease;
 }
 
 header h1 {
+  font-size: 2.5rem;
   color: #00bfff;
-  font-size: 2.2rem;
+  text-shadow: 0 0 15px #00bfff;
 }
 
 header p {
-  color: #a8c2d9;
+  color: #b0c7e1;
+  font-size: 1.1rem;
+}
+
+/* === SECCIÓN SOBRE MÍ === */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+}
+
+.profile-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px solid #00bfff;
+  box-shadow: 0 0 25px #0077ff;
+}
+
+.about-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-text h2 {
+  color: #00bfff;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+.about-text p {
+  line-height: 1.6;
 }
 
 /* === PROYECTOS === */
 .projects {
+  padding: 60px 20px;
   text-align: center;
-  padding: 40px 20px;
 }
 
 .projects h2 {
   color: #00bfff;
+  text-shadow: 0 0 15px #00bfff;
   margin-bottom: 40px;
-  text-shadow: 0 0 10px #00bfff;
 }
 
 .project-grid {
@@ -39,39 +83,66 @@ header p {
   justify-items: center;
 }
 
-/* TARJETAS */
 .project-card {
-  background-color: rgba(0, 20, 40, 0.8);
-  border-radius: 12px;
+  background: rgba(0, 20, 40, 0.7);
+  border-radius: 16px;
   padding: 20px;
-  max-width: 330px;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.3);
+  transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 20px #00bfff;
+  box-shadow: 0 0 25px #00bfff;
 }
 
-/* IMÁGENES SIN ZOOM NI RECORTE */
 .project-card img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 15px;
-  display: block;
 }
 
-/* TEXTO */
 .project-card h3 {
   color: #00bfff;
-  margin-bottom: 10px;
 }
 
 .project-card p {
-  color: #cdd9e5;
   font-size: 0.95rem;
-  line-height: 1.4;
+  color: #cbdaf1;
+  min-height: 70px;
+}
+
+/* === BOTONES === */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #00bfff;
+  color: #000;
+  box-shadow: 0 0 20px #00bfff;
+  transform: scale(1.05);
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  color: #b0c7e1;
+  background: rgba(0, 0, 20, 0.8);
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
