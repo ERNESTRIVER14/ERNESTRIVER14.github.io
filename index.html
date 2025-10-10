@@ -12,13 +12,13 @@
 <body>
   <div id="particles-js"></div>
 
-  <!-- === CABECERA === -->
-  <nav class="navbar">
-    <div class="logo">ER</div>
+  <!-- CABECERA FIXA (no tapa contenido gracias al offset dinámico en CSS/JS) -->
+  <nav class="navbar" role="navigation" aria-label="Principal">
+    <div class="nav-logo">ER</div>
     <ul class="nav-links">
       <li><a href="#about">Sobre mí</a></li>
       <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#tech">Tecnologías</a></li>
+      <li><a href="#skills">Tecnologías</a></li>
     </ul>
   </nav>
 
@@ -27,63 +27,65 @@
     <p>Estudiante de Tecnólogo en Desarrollo de Software — 7° semestre</p>
   </header>
 
-  <!-- === SOBRE MÍ === -->
-  <section id="about" class="about">
-    <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
-    <div class="about-text">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
-        desarrollados en <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>,
-        <strong>Arduino</strong>, <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>.
-        Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.
-      </p>
-    </div>
-  </section>
-
-  <!-- === PROYECTOS === -->
-  <section id="projects" class="projects">
-    <h2>Mis Proyectos</h2>
-    <div class="project-grid">
-      <div class="project-card" data-aos="fade-up">
-        <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
-        <h3>Medidor de Nivel de Agua</h3>
-        <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
-        <div class="tech-used">Arduino • C++</div>
-        <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+  <main>
+    <!-- SOBRE MÍ -->
+    <section id="about" class="about">
+      <img src="img/ernesto.png" alt="Foto de Ernesto" class="profile-img" />
+      <div class="about-text">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy estudiante de Tecnólogo en Desarrollo de Software con experiencia en proyectos
+          desarrollados en <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>,
+          <strong>Arduino</strong>, <strong>MySQL</strong>, <strong>HTML</strong> y <strong>CSS</strong>.
+          Me apasiona crear soluciones tecnológicas que combinen innovación y funcionalidad.
+        </p>
       </div>
+    </section>
 
-      <div class="project-card" data-aos="fade-up">
-        <img src="img/motorapp.png" alt="Motor Control App" />
-        <h3>Motor Control App</h3>
-        <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
-        <div class="tech-used">C# • Arduino</div>
-        <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+    <!-- PROYECTOS (estructura original, sólo agregué el cuadro pequeño de lenguajes) -->
+    <section id="projects" class="projects">
+      <h2>Mis Proyectos</h2>
+      <div class="project-grid">
+        <div class="project-card" data-aos="fade-up">
+          <img src="img/medidor.png" alt="Medidor de Nivel de Agua" />
+          <h3>Medidor de Nivel de Agua</h3>
+          <p>Sistema con Arduino y sensores ultrasónicos que mide el nivel de agua en tiempo real.</p>
+          <div class="tech-used">Arduino · C++</div>
+          <a href="https://github.com/ernestriver14/MedidorNivelAgua/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <img src="img/motorapp.png" alt="Motor Control App" />
+          <h3>Motor Control App</h3>
+          <p>Aplicación en C# conectada con Arduino para controlar motores y monitorear su estado.</p>
+          <div class="tech-used">C# · Arduino</div>
+          <a href="https://github.com/ernestriver14/MotorControlApp/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
+          <h3>Base de Datos Juguetería</h3>
+          <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
+          <div class="tech-used">Java · MySQL</div>
+          <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+        </div>
       </div>
+    </section>
 
-      <div class="project-card" data-aos="fade-up">
-        <img src="img/jugueteria.png" alt="Base de Datos Juguetería" />
-        <h3>Base de Datos Juguetería</h3>
-        <p>Proyecto en MySQL y Java para gestionar el inventario y ventas de una juguetería.</p>
-        <div class="tech-used">Java • MySQL</div>
-        <a href="https://github.com/ernestriver14/BaseDeDatosJugueteria/blob/main/README.md" target="_blank" class="btn">Ver README</a>
+    <!-- TECNOLOGÍAS (sólo los que pediste) -->
+    <section id="skills" class="skills">
+      <h2>Tecnologías y Herramientas</h2>
+      <div class="skills-grid">
+        <span>Java</span>
+        <span>C</span>
+        <span>C#</span>
+        <span>Arduino</span>
+        <span>MySQL</span>
+        <span>HTML</span>
+        <span>CSS</span>
       </div>
-    </div>
-  </section>
-
-  <!-- === TECNOLOGÍAS === -->
-  <section id="tech" class="tech">
-    <h2>Tecnologías y Herramientas</h2>
-    <div class="tech-grid">
-      <div class="tech-item">Java</div>
-      <div class="tech-item">C</div>
-      <div class="tech-item">C#</div>
-      <div class="tech-item">Arduino</div>
-      <div class="tech-item">MySQL</div>
-      <div class="tech-item">HTML</div>
-      <div class="tech-item">CSS</div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Ernesto Emiliano Rivera López</p>
