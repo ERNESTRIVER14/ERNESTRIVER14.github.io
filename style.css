@@ -18,7 +18,6 @@ body {
 header {
   text-align: center;
   padding: 80px 20px 40px;
-  animation: fadeIn 1.5s ease;
 }
 
 header h1 {
@@ -103,7 +102,7 @@ header p {
   box-shadow: 0 0 20px #00bfff;
 }
 
-/* === PROYECTOS (CORREGIDO) === */
+/* === PROYECTOS SIN ZOOM === */
 .projects {
   padding: 60px 20px;
   text-align: center;
@@ -114,7 +113,6 @@ header p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
   justify-items: center;
-  align-items: start;
 }
 
 .project-card {
@@ -122,36 +120,24 @@ header p {
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0, 120, 255, 0.3);
-  transition: transform 0.4s, box-shadow 0.4s;
   width: 100%;
   max-width: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 0 25px #00bfff;
 }
 
-.project-image {
+.project-card img {
   width: 100%;
-  height: 200px;
-  overflow: hidden;
+  height: auto; /* ✅ Mantiene proporción original */
   border-radius: 12px;
   margin-bottom: 15px;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.08);
 }
 
 .project-card h3 {
@@ -208,17 +194,4 @@ footer {
 footer a {
   color: #00bfff;
   text-decoration: none;
-}
-
-/* Adaptación móvil */
-@media (max-width: 768px) {
-  .project-image {
-    height: 160px;
-  }
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
